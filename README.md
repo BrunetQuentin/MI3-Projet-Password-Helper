@@ -28,9 +28,9 @@ Le résultat attendu est visible à l'adresse : [Password Helper (Résultat Atte
 
 
 ### La génération d'un mot de passe aléatoire (`password-generation.php`)
-- [ ] Si aucun paramètre n'est présent dans la QueryString de l'URL, il ne faut afficher aucun message sous le bouton "Générer"
-- [ ] Si un paramètre `taille` est présent dans la QueryString de l'URL mais aucun paramètre `typesCarac[]` n'est présent, il faut afficher le message d'avertissement "⚠ Impossible de générer..." visible dans le HTML fourni
-- [ ] Si un paramètre `taille` et au moins un paramètre `typesCarac[]` est présent dans la QueryString de l'URL, il faut lancer la génération d'un mot de passe aléatoire selon les critères sélectionnés
-- [ ] Si un type de caractères est sélectionné, il faut qu'il y ait **toujours au moins un caractère de ce type** dans le mot de passe généré
-- [ ] Quand une URL contenant des paramètres dans sa QueryString est chargée, il faut que toutes les informations présentes dans l'URL soient appliquées dans la page chargée *(Si l'URL contient `taille=8`, il faut que le champ taille affiche la valeur **8**)*
+- [x] Si aucun paramètre n'est présent dans la QueryString de l'URL, il ne faut afficher aucun message sous le bouton "Générer"
+- [x] Si un paramètre `taille` est présent dans la QueryString de l'URL mais aucun paramètre `typesCarac[]` n'est présent, il faut afficher le message d'avertissement "⚠ Impossible de générer..." visible dans le HTML fourni
+- [x] Si un paramètre `taille` et au moins un paramètre `typesCarac[]` est présent dans la QueryString de l'URL, il faut lancer la génération d'un mot de passe aléatoire selon les critères sélectionnés
+- [x] Si un type de caractères est sélectionné, il faut qu'il y ait **toujours au moins un caractère de ce type** dans le mot de passe généré
+- [x] Quand une URL contenant des paramètres dans sa QueryString est chargée, il faut que toutes les informations présentes dans l'URL soient appliquées dans la page chargée *(Si l'URL contient `taille=8`, il faut que le champ taille affiche la valeur **8**)*
 
