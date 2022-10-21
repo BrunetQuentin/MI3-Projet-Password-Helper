@@ -7,7 +7,7 @@
 	 * @return int Taille
 	 */
 	function getLastSize(int $taille) {
-		if (isset($taille) && is_numeric($taille) && (trim($taille) !== '')) {
+		if (is_numeric($taille) && (trim($taille) !== '')) {
 			return $taille;
 		}
 		else {
@@ -38,17 +38,16 @@
 		$result = '';
 
 		$charSets = [];
-		if (in_array('majuscules', $typesCarac, true)) {
-			$charSets['alphaUp'] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-		}
-		if (in_array('minuscules', $typesCarac, true)) {
-			$charSets['alphaLow'] = 'abcdefghijklmnopqrstuvwxyz';
-		}
-		if (in_array('chiffres', $typesCarac, true)) {
-			$charSets['numbers'] = '0123456789';
-		}
-		if (in_array('specials', $typesCarac, true)) {
-			$charSets['specials'] = '!?~@#-_+[]{}';
+		$categories = [
+			'alphaUp'  => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+			'alphaLow' => 'abcdefghijklmnopqrstuvwxyz',
+			'numbers'  => '0123456789',
+			'specials' => '!?~@#-_+[]{}'
+		];
+		foreach ($categories as $categoryName => $categoryValue) {
+			if (in_array('majuscules', $typesCarac, true)) {
+				$charSets[$categoryName] = $categoryValue;
+			}
 		}
 
 		$i = 0;
@@ -72,7 +71,7 @@
 	}
 
 	$displayPass = count($_GET) !== 0;
-	$error = (isset($_GET['taille']) === true) && (isset($_GET['typesCarac']) === false);
+	$error = (isset($_GET['taille']) === false) || (isset($_GET['typesCarac']) === false);
 
 	// Si on doit afficher le mot de passe et qu'il n'y a aucune error
 	if ($displayPass && (!$error)) {

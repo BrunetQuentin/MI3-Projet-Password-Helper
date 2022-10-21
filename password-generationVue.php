@@ -98,7 +98,7 @@ $_GET['taille'] = $_GET['taille'] ?? 8;
 				<label for="taille" class="inline-block mb-2 text-gray-700">
 					Le mot de passe à générer doit faire </label>
 				<input type="number" id="taille" name="taille" min="5" max="50"
-				class="input-number" value= <?= getLastSize($_GET['taille']) ?> >
+				class="input-number" value= <?php if (isset($_GET['taille'])) { echo getLastSize($_GET['taille']); } ?> >
 				<span>caractères.</span>
 			</div>
 
@@ -155,7 +155,7 @@ $_GET['taille'] = $_GET['taille'] ?? 8;
 
 			<?php if ($error) { ?>
 
-				<p class='text-red-800'>&#9888; Impossible de générer un mot de passe car aucun type de caractère n'a été sélectionné !</p>
+				<p class='text-red-800'>&#9888; Impossible de générer un mot de passe car aucune taille ou aucun type de caractère n'a été sélectionné !</p>
 
 			<?php } else {?>
 
