@@ -70,6 +70,17 @@
 		return str_shuffle($result);
 	}
 
+	$typesCaracCopyToCheck = $_GET['typesCarac'];
+	for ($i = 0; $i < count($typesCaracCopyToCheck); $i++) {
+		if (in_array($typesCaracCopyToCheck[$i], ['majuscules', 'minuscules', 'chiffres', 'specials'], true) === false) {
+			unset($_GET['typesCarac'][$i]);
+		}
+	}
+	$_GET['typesCarac'] = array_values($_GET['typesCarac']);
+	if (count($_GET['typesCarac']) === 0) {
+		unset($_GET['typesCarac']);
+	}
+
 	$displayPass = count($_GET) !== 0;
 	$error = (isset($_GET['taille']) === false) || (isset($_GET['typesCarac']) === false);
 
