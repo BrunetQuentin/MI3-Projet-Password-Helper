@@ -176,6 +176,7 @@
                     </div>
                     <?php
                         $passwordToCheck = $_GET['mdp'] ?? "";
+                        $passwordToCheck = htmlspecialchars($passwordToCheck);
                         // check if paswword is set
                         if($passwordToCheck != ""){
                             $indexWord = searchInArray($listOfWorstPassword, $passwordToCheck);
