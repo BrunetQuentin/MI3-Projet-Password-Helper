@@ -39,13 +39,13 @@
 
 		$charSets = [];
 		$categories = [
-			'alphaUp'  => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-			'alphaLow' => 'abcdefghijklmnopqrstuvwxyz',
-			'numbers'  => '0123456789',
+			'majuscules'  => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+			'minuscules' => 'abcdefghijklmnopqrstuvwxyz',
+			'chiffres'  => '0123456789',
 			'specials' => '!?~@#-_+[]{}'
 		];
 		foreach ($categories as $categoryName => $categoryValue) {
-			if (in_array('majuscules', $typesCarac, true)) {
+			if (in_array($categoryName, $typesCarac, true)) {
 				$charSets[$categoryName] = $categoryValue;
 			}
 		}
