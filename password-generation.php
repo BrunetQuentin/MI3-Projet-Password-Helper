@@ -69,6 +69,7 @@
 	}
 
 	if (isset($_GET['typesCarac'])) {
+		$_GET['typesCarac'] = array_values($_GET['typesCarac']);
 		$typesCaracCopyToCheck = $_GET['typesCarac'];
 		for ($i = 0; $i < count($typesCaracCopyToCheck); $i++) {
 			if (in_array($typesCaracCopyToCheck[$i], ['majuscules', 'minuscules', 'chiffres', 'specials'], true) === false) {
