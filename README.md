@@ -19,13 +19,13 @@ Le résultat attendu est visible à l'adresse : [Password Helper (Résultat Atte
 
 ### Les pires mots de passe (`worst-passwords.php`)
 
--   [ ] Récupérer la liste des pires mots de passe en chargeant dans votre script PHP le JSON fourni : `data/PwnedPasswordsTop100k.json`
--   [ ] Faire en sorte qu'à chaque fois que le nombre "100.000" apparait sur la page, cela provienne du nombre de mots de passe contenus dans la liste chargée
--   [ ] Générer la liste des 10 pires mots de passe à partir de la liste chargée
--   [ ] Faire fonctionner la recherche de mot de passe et afficher un message selon le cas _(En se basant sur les messages fournis dans le HTML)_
--   [ ] Faire en sorte que si une recherche est effectuée, le texte recherché apparaisse dans le champ de recherche au chargement de la page
--   [ ] Faire en sorte que si aucune recherche n'est faite, aucun message n'apparait sous le champ de recherche
--   [ ] Formatter tous les grands nombres affichés avec un '.' comme séparateur de milliers
+-   [x] Récupérer la liste des pires mots de passe en chargeant dans votre script PHP le JSON fourni : `data/PwnedPasswordsTop100k.json`
+-   [x] Faire en sorte qu'à chaque fois que le nombre "100.000" apparait sur la page, cela provienne du nombre de mots de passe contenus dans la liste chargée
+-   [x] Générer la liste des 10 pires mots de passe à partir de la liste chargée
+-   [x] Faire fonctionner la recherche de mot de passe et afficher un message selon le cas _(En se basant sur les messages fournis dans le HTML)_
+-   [x] Faire en sorte que si une recherche est effectuée, le texte recherché apparaisse dans le champ de recherche au chargement de la page
+-   [x] Faire en sorte que si aucune recherche n'est faite, aucun message n'apparait sous le champ de recherche
+-   [x] Formatter tous les grands nombres affichés avec un '.' comme séparateur de milliers
 
 ### La génération d'un mot de passe aléatoire (`password-generation.php`)
 - [x] Si aucun paramètre n'est présent dans la QueryString de l'URL, il ne faut afficher aucun message sous le bouton "Générer"
