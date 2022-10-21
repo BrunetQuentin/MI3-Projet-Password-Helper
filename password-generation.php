@@ -2,11 +2,9 @@
 	/**
 	 * Obtient le critère de taille à afficher
 	 *
-	 * @param int Taille
-	 *
 	 * @return int Taille
 	 */
-	function getLastSize(int $taille) {
+	function getLastSize($taille) {
 		if (is_numeric($taille) && (trim($taille) !== '')) {
 			return $taille;
 		}
@@ -84,7 +82,7 @@
 	}
 
 	$displayPass = count($_GET) !== 0;
-	$error = (isset($_GET['taille']) === false) || (isset($_GET['typesCarac']) === false);
+	$error = (isset($_GET['taille']) === false) || (is_numeric($_GET['taille']) === false) || (trim($_GET['taille']) === '') || (isset($_GET['typesCarac']) === false);
 
 	// Si on doit afficher le mot de passe et qu'il n'y a aucune error
 	if ($displayPass && (!$error)) {
