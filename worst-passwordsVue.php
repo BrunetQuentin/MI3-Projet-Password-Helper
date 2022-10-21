@@ -51,7 +51,6 @@
         <title>Pires mots de passe - Password Helper</title>
     </head>
     <?php 
-      include 'worst-passwords.php';
       $listOfWorstPassword = readWorstPasswords();
     ?>
     <body class="bg-gray-50">

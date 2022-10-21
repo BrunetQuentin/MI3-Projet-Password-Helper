@@ -20,13 +20,15 @@ function searchInArray($worstPasswords, $password) {
     $index = -1;
     foreach ($worstPasswords as $key => $value) {
         if ($value == $password) {
-            $index = $key;
+            $index = $key + 1;
             break;
         }
     }
     // add 1 to the index because the array is 0-indexed
-    return $index + 1;
+    return $index;
 }
+
+include_once("worst-passwordsVue.php");
 
 ?>
 
