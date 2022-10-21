@@ -71,7 +71,7 @@
                         <a
                             id="password-generation"
                             class="inactive-pill"
-                            href="password-generation.html"
+                            href="password-generation.php"
                             >Générer un mot de passe<br />aléatoire</a
                         >
                     </li>
@@ -134,7 +134,7 @@
 
                     <p class="text-xl my-4">
                         Saisir ci-dessous un mot de passe pour voir si celui-ci
-                        fait partie des <b>100.000 mots de passe</b> les plus
+                        fait partie des <b><?=getNumberWithDot(count($listOfWorstPassword))?> mots de passe</b> les plus
                         courants :
                     </p>
                     <div class="flex justify-center">

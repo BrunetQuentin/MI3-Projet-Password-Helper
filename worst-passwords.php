@@ -28,6 +28,12 @@ function searchInArray($worstPasswords, $password) {
     return $index;
 }
 
+// function that transform an integer into a string with dots
+// ex: 1000000 -> 1.000.000
+function getNumberWithDot($number) {
+    return number_format( $number, 0, '', '.');
+}
+
 include_once("worst-passwordsVue.php");
 
 ?>

@@ -63,7 +63,7 @@
 				<li class="mr-3">
 					<a id="worst-passwords"
 						class="inactive-pill"
-						href="worst-passwords.html"
+						href="worst-passwords.php"
 					>Découvrir les pires<br>mots de passe</a>
 				</li>
 
