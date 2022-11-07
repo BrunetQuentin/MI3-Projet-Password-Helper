@@ -83,7 +83,7 @@
 	}
 
 	$displayPass = count($_GET) !== 0;
-	$error = (isset($_GET['taille']) === false) || (is_numeric($_GET['taille']) === false) || (trim($_GET['taille']) === '') || (isset($_GET['typesCarac']) === false);
+	$error = (isset($_GET['taille']) === false) || (is_numeric($_GET['taille']) === false) || (trim($_GET['taille']) === '') || ($_GET['taille'] < 5) || ($_GET['taille'] > 20) || (isset($_GET['typesCarac']) === false);
 
 	// Si on doit afficher le mot de passe et qu'il n'y a aucune error
 	if ($displayPass && (!$error)) {

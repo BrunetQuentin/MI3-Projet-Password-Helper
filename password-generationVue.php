@@ -98,7 +98,7 @@ $_GET['taille'] = $_GET['taille'] ?? 8;
 				<label for="taille" class="inline-block mb-2 text-gray-700">
 					Le mot de passe à générer doit faire </label>
 				<input type="number" id="taille" name="taille" min="5" max="50"
-				class="input-number" value= <?php if (isset($_GET['taille'])) { echo getLastSize($_GET['taille']); } ?> >
+				class="input-number" value= <?= isset($_GET['taille']) ? getLastSize($_GET['taille']) : '' ?> >
 				<span>caractères.</span>
 			</div>
 
@@ -111,7 +111,7 @@ $_GET['taille'] = $_GET['taille'] ?? 8;
 					<div class="mb-2">
 						<input type="checkbox" id="input-maj" class="input-checkbox"
 							name="typesCarac[]" value="majuscules"
-							<?php if (isset($_GET['typesCarac'])) echo in_array('majuscules', $_GET['typesCarac'], true) ? 'checked' : '' ?> >
+							<?= isset($_GET['typesCarac']) && in_array('majuscules', $_GET['typesCarac'], true) ? 'checked' : '' ?> >
 						<label class="inline-block text-gray-800" for="input-maj">
 							Une lettre majuscule [ABCDEFGHIJKLMNOPQRSTUVWXYZ]
 						</label>
@@ -119,7 +119,7 @@ $_GET['taille'] = $_GET['taille'] ?? 8;
 					<div class="mb-2">
 						<input type="checkbox" id="input-min" class="input-checkbox"
 							name="typesCarac[]" value="minuscules"
-							<?php if (isset($_GET['typesCarac'])) echo in_array('minuscules', $_GET['typesCarac'], true) ? 'checked' : '' ?> >
+							<?= isset($_GET['typesCarac']) && in_array('minuscules', $_GET['typesCarac'], true) ? 'checked' : '' ?> >
 						<label class="inline-block text-gray-800" for="input-min">
 							Une lettre minuscule [abcdefghijklmnopqrstuvwxyz]
 						</label>
@@ -127,7 +127,7 @@ $_GET['taille'] = $_GET['taille'] ?? 8;
 					<div class="mb-2">
 						<input type="checkbox" id="input-chiffre" class="input-checkbox"
 							name="typesCarac[]" value="chiffres"
-							<?php if (isset($_GET['typesCarac'])) echo in_array('chiffres', $_GET['typesCarac'], true) ? 'checked' : '' ?> >
+							<?= isset($_GET['typesCarac']) && in_array('chiffres', $_GET['typesCarac'], true) ? 'checked' : '' ?> >
 						<label class="inline-block text-gray-800" for="input-chiffre">
 							Un chiffre [0123456789]
 						</label>
@@ -135,7 +135,7 @@ $_GET['taille'] = $_GET['taille'] ?? 8;
 					<div class="mb-2">
 						<input type="checkbox" id="input-special" class="input-checkbox"
 							name="typesCarac[]" value="specials"
-							<?php if (isset($_GET['typesCarac'])) echo in_array('specials', $_GET['typesCarac'], true) ? 'checked' : '' ?> >
+							<?= isset($_GET['typesCarac']) && in_array('specials', $_GET['typesCarac'], true) ? 'checked' : '' ?> >
 						<label class="inline-block text-gray-800" for="input-special">
 							Un caractère spécial [!?~@#-_+[]{}]
 						</label>
