@@ -1,36 +1,31 @@
 
 <?php
 
-function readWorstPasswords() {
-    // Read the file data/PwnedPasswordsTop100k.json
-    // and returns the array of passwords
+/**
+ * On récupère la liste des mots de passe les plus utilisés
+ * @return array
+ */ 
+function readWorstPasswords(): array {
+    // Lire le fichier data/PwnedPasswordsTop100k.json
     $worstPasswords = json_decode(file_get_contents("data/PwnedPasswordsTop100k.json"), true);
     return $worstPasswords;
 }
 
-function getTenFirstPasswords($worstPasswords) {
-    // Returns the 10 first passwords of the array
+/**
+ * On récupère la liste des 10 mots de passe les plus utilisés
+ * @return array
+ */
+function getTenFirstPasswords(array $worstPasswords): array {
     $tenFirstPasswords = array_slice($worstPasswords, 0, 10);
     return $tenFirstPasswords;
 }
 
-function searchInArray($worstPasswords, $password) {
-    // loop throught worst passwords array and return it's index if found
-    // else return -1
-    $index = -1;
-    foreach ($worstPasswords as $key => $value) {
-        if ($value == $password) {
-            $index = $key + 1;
-            break;
-        }
-    }
-    // add 1 to the index because the array is 0-indexed
-    return $index;
-}
-
-// function that transform an integer into a string with dots
-// ex: 1000000 -> 1.000.000
-function getNumberWithDot($number) {
+/**
+ * fonction qui permet d'ajouter des points dans un nombre
+ * ex: 1000000 => 1.000.000
+ * @return int
+ */
+function getNumberWithDot(int $number): string {
     return number_format( $number, 0, '', '.');
 }
 

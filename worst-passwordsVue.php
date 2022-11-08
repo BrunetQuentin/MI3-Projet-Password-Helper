@@ -179,8 +179,8 @@
                         $passwordToCheck = htmlspecialchars($passwordToCheck);
                         // check if paswword is set
                         if($passwordToCheck != ""){
-                            $indexWord = searchInArray($listOfWorstPassword, $passwordToCheck);
-                            if($indexWord == -1){
+                            $indexWord = array_search($passwordToCheck, $listOfWorstPassword);
+                            if($indexWord == false){
                                 echo ("<p class=\"text-green-800\">
                                 &#8658; Le mot de passe \"<b>{$passwordToCheck}</b>\" ne fait pas
                                 partie des 100.000 mots de passe les plus utilisés.
