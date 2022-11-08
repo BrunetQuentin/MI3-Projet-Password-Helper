@@ -29,6 +29,8 @@ function getNumberWithDot(int $number): string {
     return number_format( $number, 0, '', '.');
 }
 
+$mdp = $_GET['mdp'] ?? "";
+
 include_once("worst-passwordsVue.php");
 
 ?>

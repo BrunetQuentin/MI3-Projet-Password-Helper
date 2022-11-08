@@ -2,11 +2,9 @@
 	/**
 	 * Obtient le critère de taille à afficher
 	 *
-	 * @param int Taille
-	 *
 	 * @return int Taille
 	 */
-	function getLastSize(int $taille) {
+	function getLastSize($taille) {
 		if (is_numeric($taille) && (trim($taille) !== '')) {
 			return $taille;
 		}
@@ -70,12 +68,30 @@
 		return str_shuffle($result);
 	}
 
+	if (isset($_GET['typesCarac'])) {
+		$_GET['typesCarac'] = array_values($_GET['typesCarac']);
+		$typesCaracCopyToCheck = $_GET['typesCarac'];
+		for ($i = 0; $i < count($typesCaracCopyToCheck); $i++) {
+			if (in_array($typesCaracCopyToCheck[$i], ['majuscules', 'minuscules', 'chiffres', 'specials'], true) === false) {
+				unset($_GET['typesCarac'][$i]);
+			}
+		}
+		$_GET['typesCarac'] = array_values($_GET['typesCarac']);
+		if (count($_GET['typesCarac']) === 0) {
+			unset($_GET['typesCarac']);
+		}
+	}
+
 	$displayPass = count($_GET) !== 0;
-	$error = (isset($_GET['taille']) === false) || (isset($_GET['typesCarac']) === false);
+	$error = (isset($_GET['taille']) === false) || (is_numeric($_GET['taille']) === false) || (trim($_GET['taille']) === '') || ($_GET['taille'] < 5) || ($_GET['taille'] > 20) || (isset($_GET['typesCarac']) === false);
 
 	// Si on doit afficher le mot de passe et qu'il n'y a aucune error
 	if ($displayPass && (!$error)) {
 		$password = genPass($_GET['typesCarac'], $_GET['taille']);
 	}
+
+	// Récupération des paramètres
+	$taille = $_GET['taille'] ?? 8;
+	$typesCarac = $_GET['typesCarac'] ?? null;
 
 	require_once('password-generationVue.php');
