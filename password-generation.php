@@ -90,4 +90,8 @@
 		$password = genPass($_GET['typesCarac'], $_GET['taille']);
 	}
 
+	// Récupération des paramètres
+	$taille = $_GET['taille'] ?? 8;
+	$typesCarac = $_GET['typesCarac'] ?? null;
+
 	require_once('password-generationVue.php');

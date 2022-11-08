@@ -130,7 +130,7 @@
                         </form>
                     </div>
                     <?php
-                        $passwordToCheck = $_GET['mdp'] ?? "";
+                        $passwordToCheck = $mdp;
                         $passwordToCheck = htmlspecialchars($passwordToCheck);
                         // check if paswword is set
                         if($passwordToCheck != ""){
